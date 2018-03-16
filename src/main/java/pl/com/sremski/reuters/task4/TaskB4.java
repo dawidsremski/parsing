@@ -21,6 +21,7 @@ public class TaskB4 {
             fileInputStream = new FileInputStream(path);
         } catch (FileNotFoundException e) {
             System.out.println("File " + path + " not found!");
+            return;
         }
 
         countryGDP = parser.parseToMap(fileInputStream);
