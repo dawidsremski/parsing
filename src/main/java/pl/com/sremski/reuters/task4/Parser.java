@@ -7,17 +7,16 @@ import java.util.stream.Collectors;
 
 public class Parser {
 
-    public HashMap<String,Integer> parseToMap(String path) throws FileNotFoundException {
+    public HashMap<String, Integer> parseToMap(InputStream fileInputStream) {
 
-        InputStream inputStream = new FileInputStream(path);
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
 
         return bufferedReader.lines()
                 .filter(s -> !s.equals("Country\tGDP"))
                 .map(s -> {
                     String[] splitted = s.split("\t");
                     return new AbstractMap.SimpleEntry<>(
-                            splitted[0].replaceAll("\\[.*\\]",""),
+                            splitted[0].replaceAll("\\[.*\\]", ""),
                             Integer.valueOf(splitted[1].replaceAll("[^\\d]", ""))
                     );
                 })
