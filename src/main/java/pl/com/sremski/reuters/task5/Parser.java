@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -14,9 +13,7 @@ import java.util.stream.Collectors;
 
 public class Parser {
 
-    public List<Hurricane> parseToList(String url) throws IOException {
-
-        InputStream inputStream = new URL(url).openStream();
+    public List<Hurricane> parseToList(InputStream inputStream) {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
@@ -48,9 +45,10 @@ public class Parser {
                 hurricane.setMaxSustainedWS((sustainedWS > maxSustainedWS) ? sustainedWS : maxSustainedWS);
             }
         }
-        hurricane.setName(hurName);
-        hurricanes.add(hurricane);
-
+        if (hurName != null) {
+            hurricane.setName(hurName);
+            hurricanes.add(hurricane);
+        }
         return hurricanes;
     }
 }

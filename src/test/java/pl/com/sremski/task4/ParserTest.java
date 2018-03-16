@@ -12,12 +12,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ParserTest {
 
-    private Parser parser;
+    private Parser parser = new Parser();
     private InputStream fileInputStream;
 
     @Before
     public void before() {
-        parser = new Parser();
         String file = "Country\tGDP\nSweden\t511,397\nNorway\t370,449\nArgentina[7]\t545,124\nSaudi Arabia\t646,438";
         fileInputStream = new ByteArrayInputStream(file.getBytes());
     }
