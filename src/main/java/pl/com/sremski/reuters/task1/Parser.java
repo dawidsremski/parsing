@@ -56,7 +56,7 @@ public class Parser {
                 stringBuilder.append(text).append("\t");
                 i++;
             }
-            list.add(stringBuilder.toString());
+            list.add(stringBuilder.toString().trim());
         }
 
         return list;
