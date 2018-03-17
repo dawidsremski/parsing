@@ -14,8 +14,8 @@ public class TaskB4 {
 
         String path = "task_B4.txt";
         Parser parser = new Parser();
-        InputStream fileInputStream = null;
-        HashMap<String, Integer> countryGDP = new HashMap<>();
+        InputStream fileInputStream;
+        HashMap<String, Integer> countryGDP;
 
         try {
             fileInputStream = new FileInputStream(path);

@@ -6,7 +6,6 @@ import pl.com.sremski.reuters.task5.Hurricane;
 import pl.com.sremski.reuters.task5.Parser;
 
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
