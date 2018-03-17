@@ -11,9 +11,8 @@ import java.util.List;
 
 public class Parser {
 
-    public List<DataRow> parse() throws IOException {
+    public List<DataRow> parse(Document doc) throws IOException {
 
-        Document doc = Jsoup.connect("http://www.mercado.ren.pt/EN/Electr/MarketInfo/Gen/Pages/Forecast.aspx").get();
         Elements rows = doc.select("tr.trPAR,tr.trIMPAR");
 
         List<DataRow> data = new ArrayList<>();
