@@ -1,0 +1,3 @@
+SELECT ContactName FROM orders WHERE Amount > 200 AND Country = 'UK';
+UPDATE orders SET Type = 'Corn' WHERE ID = 2;
+SELECT SUM(Amount) FROM orders WHERE Country = 'UK';

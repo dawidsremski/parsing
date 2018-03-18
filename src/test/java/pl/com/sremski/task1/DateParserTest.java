@@ -13,8 +13,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class DateParserTest {
 
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-    private String[] dates = {"2017/10/10", "10102017T0000", "10-10-2017"};
-    private DateParser dateParser = new DateParser();
+    private final String[] dates = {"2017/10/10", "10102017T0000", "10-10-2017"};
+    private final DateParser dateParser = new DateParser();
 
     @Test
     public void shouldParseDates() {
